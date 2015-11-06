@@ -72,4 +72,5 @@ Each component provide its own web UI. Open you browser at one of the URLs below
 
 
 ### Other links
+- This docker image (and README) inspired by https://github.com/bigdatafoundation/docker-kudu
 - https://github.com/cloudera/kudu-examples/wiki/Docker-based-tutorial
