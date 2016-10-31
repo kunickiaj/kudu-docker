@@ -36,8 +36,8 @@ docker build -t kunickiaj/kudu .
 
 ### (Optional) Create Data containers
 ```bash
-docker create --name kudu-master-data -v /data/kudu-master kunickiaj/kudu
-docker create --name kudu-tserver-data -v /data/kudu-tserver kunickiaj/kudu
+docker create --name kudu-master-data -v /var/lib/kudu/master kunickiaj/kudu
+docker create --name kudu-tserver-data -v /var/lib/kudu/tserver kunickiaj/kudu
 ```
 
 ### Starting the Kudu Master

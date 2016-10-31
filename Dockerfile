@@ -12,5 +12,5 @@ VOLUME /var/lib/kudu/master /var/lib/kudu/tserver
 
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
-EXPOSE 8050 8051
+EXPOSE 8050 8051 7050 7051
 CMD ["help"]

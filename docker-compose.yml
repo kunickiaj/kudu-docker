@@ -9,18 +9,20 @@ kudu-tserver-data:
 kudu-master:
   image: kunickiaj/kudu
   ports:
-    - 8051
+    - 7051:7051
   volumes_from:
     - kudu-master-data
   command: master
+  hostname: boot2docker
 kudu-tserver:
   image: kunickiaj/kudu
   environment:
     - KUDU_MASTER=kudu-master
   ports:
-    - 8050
+    - 7050:7050
   volumes_from:
     - kudu-tserver-data
   command: tserver
   links:
     - kudu-master
+  hostname: boot2docker
