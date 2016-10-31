@@ -7,7 +7,7 @@ function do_help {
   echo "   master              - Start a Kudu Master"
   echo "   tserver             - Start a Kudu TServer"
   echo "   single              - Start a Kudu Master+TServer in one container"
-  echo "   cli                 - Run the Kudu CLI"
+  echo "   kudu                - Run the Kudu CLI"
   echo "   help                - print useful information and exit"
   echo ""
   echo "Other commands can be specified to run shell commands."
@@ -44,9 +44,9 @@ elif [ "$1" = 'single' ]; then
   sleep 5
   exec kudu-tserver -fs_wal_dir /var/lib/kudu/tserver \
   -tserver_master_addrs ${KUDU_MASTER} ${KUDU_TSERVER_OPTS}
-elif [ "$1" = 'cli' ]; then
+elif [ "$1" = 'kudu' ]; then
   shift; # Remove first arg and pass remainder to kudu cli
-  exec kudu-ts-cli -server_address=${KUDU_TSERVER} "$@"
+  exec kudu "$@"
 elif [ "$1" = 'help' ]; then
   do_help
 fi

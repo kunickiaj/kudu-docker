@@ -59,7 +59,7 @@ docker logs -f kudu-tserver
 
 ### Starting a Kudu console
 ```bash
-docker run --rm -it --link kudu_tserver -e KUDU_TSERVER=kudu_tserver kunickiaj/kudu cli status
+docker run --rm -it --link kudu_tserver -e KUDU_TSERVER=kudu_tserver kunickiaj/kudu kudu tserver status kudu_tserver
 ```
 
 ### Accessing the web interfaces
