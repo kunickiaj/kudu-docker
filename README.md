@@ -48,7 +48,7 @@ docker run -d --name kudu-master -p 8051:8051 kunickiaj/kudu master
 ### Starting the Kudu TabletServer
 ```bash
 docker run -d --name kudu-tserver -p 8050:8050 --link kudu-master \
-  -e KUDU_MASTER=kudu-master kudu tserver
+  -e KUDU_MASTER=kudu-master kunickiaj/kudu tserver
 ```
 
 ### Tailing the logs
@@ -59,7 +59,7 @@ docker logs -f kudu-tserver
 
 ### Starting a Kudu console
 ```bash
-docker run --rm -it --link kudu_tserver -e KUDU_TSERVER=kudu_tserver kunickiaj/kudu kudu tserver status kudu_tserver
+docker run --rm -it --link kudu-tserver -e KUDU_TSERVER=kudu-tserver kunickiaj/kudu kudu tserver status kudu-tserver
 ```
 
 ### Accessing the web interfaces
