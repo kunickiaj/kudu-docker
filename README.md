@@ -1,12 +1,10 @@
-# Docker image for Kudu
-![logo](http://getkudu.io/img/logo.png)
-
+# Docker image for Apache Kudu
+![Apache Kudu](https://d3dr9sfxru4sde.cloudfront.net/i/k/apachekudu_logo_0716_345px.png)
 
 ## What is Kudu?
-Kudu is an open source storage engine for structured data which supports low-latency random access together with effi- cient analytical access patterns. Kudu distributes data using horizontal partitioning and replicates each partition using Raft consensus, providing low mean-time-to-recovery and low tail latencies. Kudu is designed within the context of the Hadoop ecosystem and supports many modes of access via tools such as [Cloudera Impala](http://impala.io/), [Apache Spark](http://spark.apache.org/), and [MapReduce](https://hadoop.apache.org/).
+Kudu is an open source storage engine for structured data which supports low-latency random access together with efficient analytical access patterns.  Kudu distributes data using horizontal partitioning and replicates each partition using Raft consensus, providing low mean-time-to-recovery and low tail latencies. Kudu is designed within the context of the Hadoop ecosystem and supports many modes of access via tools such as [Apache Impala (incubating)](https://impala.apache.org/), [Apache Spark](https://spark.apache.org/), and [MapReduce](https://hadoop.apache.org/).
 
-[http://getkudu.io/](http://getkudu.io/)
-
+[https://kudu.apache.org/](https://kudu.apache.org/)
 
 ## How to use this image?
 
