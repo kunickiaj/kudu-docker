@@ -1,28 +1,31 @@
-kudu-master-data:
-  image: kunickiaj/kudu
-  volumes:
-    - /var/lib/kudu/master
-kudu-tserver-data:
-  image: kunickiaj/kudu
-  volumes:
-    - /var/lib/kudu/tserver
-kudu-master:
-  image: kunickiaj/kudu
-  ports:
-    - 7051:7051
-  volumes_from:
-    - kudu-master-data
-  command: master
-  hostname: boot2docker
-kudu-tserver:
-  image: kunickiaj/kudu
-  environment:
-    - KUDU_MASTER=kudu-master
-  ports:
-    - 7050:7050
-  volumes_from:
-    - kudu-tserver-data
-  command: tserver
-  links:
-    - kudu-master
-  hostname: boot2docker
+version: "2"
+
+services:
+  kudu-master-data:
+    image: kunickiaj/kudu
+    volumes:
+      - /var/lib/kudu/master
+  kudu-tserver-data:
+    image: kunickiaj/kudu
+    volumes:
+      - /var/lib/kudu/tserver
+  kudu-master:
+    image: kunickiaj/kudu
+    ports:
+      - 7051:7051
+    volumes_from:
+      - kudu-master-data
+    command: master
+    hostname: boot2docker
+  kudu-tserver:
+    image: kunickiaj/kudu
+    environment:
+      - KUDU_MASTER=kudu-master
+    ports:
+      - 7050:7050
+    volumes_from:
+      - kudu-tserver-data
+    command: tserver
+    links:
+      - kudu-master
+    hostname: boot2docker
